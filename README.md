@@ -37,7 +37,7 @@ During an order, users can select 0-5 units of each pizza and drink. The custome
 
 5. If you haven't installed PostgreSQL functions on your computer yet, follow these instructions:
 
-[Ohjeet](https://github.com/hy-tsoha/local-pg)
+[Instructions](https://github.com/hy-tsoha/local-pg)
 
 6. Once you've started the database in another terminal window using the command:
 
