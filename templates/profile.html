@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% extends "layout.html" %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+
+{% if session.username %}
+<div class="content">
+    <p>Hei {{ session.username }} !</p>
+    <br>
+    <nav>
+        <p>Tarkastele tilaushistoriaasi <a href="/personal_stats">tästä</a></p>
+    </nav>
+
+
+
+    <p>Jätä meille arvostelu!</p>
+
+    <form action="/rate" method="POST">
+
+
+    <p>Anna palautetta! Palautteet näkyvät etusivullamme.</p>
+
+        Anna meille arvosana:
+
+        <input type="radio" name="rating" value="1"> 1
+        <input type="radio" name="rating" value="2"> 2
+        <input type="radio" name="rating" value="3"> 3
+        <input type="radio" name="rating" value="4"> 4
+        <input type="radio" name="rating" value="5"> 5
+
+        <input id="login-button" type="submit" value="Lähetä">
+        <input type="hidden" name="user_id" value="{{ user_id }}">
+        <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
+        <input type="hidden" name="username" value="{{ username }}">
+
+    <p>
+
+    </form>
+
+    <form action="/send" method="POST">
+        Viesti: <br>
+        <textarea name="comment" rows="3" cols="50" minlength="1" maxlength="100"></textarea>
+        <br>
+
+        <input id= "login-button" type="submit" value="Lähetä">
+        <input type="hidden" name="user_id" value="{{ user_id }}">
+        <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
+        <input type="hidden" name="username" value="{{ username }}">
+
+    </form>
+
+    <br>
+    <br>
+    <br>
+
+    <nav>
+    <a href="/logout">Kirjaudu ulos</a>
+    </nav>
+    </div>
+    {% else %}
+
+
+
+    <div class="content">
+        <form action="/login" method="POST">
+            <p>Tunnus:<br>
+            <input type="text" name="username"></p>
+            <p>Salasana:<br>
+            <input type="password" name="password"></p>
+            <input id="login-button" type="submit" value="Kirjaudu">
+            <input type="hidden" name="user_id" value="{{ user_id }}">
+            <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
+            <input type="hidden" name="username" value="{{ username }}">
+            </form>
+            <br>
+            <p> Etkö ole vielä rekisteröitynyt? Rekisteröidy tästä!</p>
+            
+            <nav>
+            <a href="/create">Rekisteröidy</a>
+            </nav>
+
+    {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% extends "profile.html" %}
+{% block content %}
+
+<html>
+    <head>
+        <title> {% block title %}Oma historia{% endblock %}</title>
+        <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='main.css') }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div class="content">
+            <nav>
+                <p>
+                <a href="http://127.0.0.1:5000/profile">Takaisin</a>
+                </p>
+            </nav>
+
+
+
+            <p>Suosikkipizzasi on:</p>
+            {{ favorite_pizza }}
+            <br>
+            <br>
+            </p>
+
+            <p>Suosikkijuomasi on:</p>
+
+            {{ favorite_drink }}
+            <br>
+            <br>
+
+            <p>Olet käyttänyt yhteensä:</p>
+    
+            {{ spent }}     euroa
+            <br>
+            <br>
+            </p>
+
+            <p>Tilaushistoriasi:</p>
+
+            <ol>
+            {% for item in list %}
+            <li> {{ item.ordered }}:  summa  {{ item.amount }} euroa
+            {% endfor %}
+            </ol>
+            <br>
+        </div>
+        {% endblock %}

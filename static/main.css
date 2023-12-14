@@ -1,0 +1,95 @@
+body {
+    margin: auto;
+    max-width: 45em;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    background: linear-gradient(45deg, red, green) no-repeat center center fixed;
+}
+
+nav li {
+    display: inline-block;
+    padding: 2em 1em;
+    background: white;
+    margin: .2em;
+    border-radius: .5em;
+    margin-top: .5em;
+}
+
+.header {
+    background:white;
+    font-weight: bold;
+    padding: 2em 1em;
+    font-size: 2em;
+    border-radius: .5em;
+    margin-top: .5em;
+    text-align: center;
+}
+
+
+nav li a {
+    text-decoration: none;
+    color: black;
+}
+
+nav li:hover {
+    background-color: white;
+}
+
+
+nav ul {
+    padding: 0;
+    margin: .5em;
+    text-align: center;;
+    border-radius: .5em;
+    margin-top: .5em;
+}
+
+.content {
+    border-radius: .5em;
+    margin-top: .5em;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+
+.content2 {
+    border-radius: .5em;
+    margin-top: .5em;
+    text-align: left;
+    color: white;
+    text-decoration: none;
+}
+
+nav a{
+    color: white;
+}
+
+form #order-button {
+    grid-column-start: 2;
+    padding:5px;
+    border: none;
+    text-align: center;
+    width: 5em;
+    margin: auto 0 auto 5.5em;
+    background: white;
+    border-radius: .5em;
+}
+
+form #login-button {
+    padding:5px;
+    border: none;
+    text-align: center;
+    width: 5em;
+    margin: auto;
+    background: white;
+    border-radius: .5em;
+}
+
+form #create-button {
+    padding:5px;
+    border: none;
+    text-align: center;
+    width: 10em;
+    margin: auto;
+    background: white;
+    border-radius: .5em;
+}

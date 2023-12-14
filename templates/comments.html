@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends "layout.html" %}
+{% block title %}Arvostelu{% endblock %}
+{% block content %}
+
+<div class="content">
+    Asiakkaiden antama keskimääräinen arvosana väliltä 1-5:  {{ rating }}
+    <br>
+    <br>
+</div>
+
+<div class="content2">
+    Kommentit:
+
+    <ol>
+    {% for comment in commentslist %}
+    <li> {{ comment.username }} julkaisi {{ comment.posted }}:  {{ comment.comment }}
+    {% endfor %}
+    </ol>
+    <br>
+
+</div>
+{% endblock %}

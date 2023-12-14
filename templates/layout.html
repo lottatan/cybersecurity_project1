@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>{% block title %}PizzaService{% endblock %}</title>
+        <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='main.css') }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div class="header">
+            <h1>PizzaService</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Etusivu</a></li>
+                <li><a href="/profile">Profiilisi</a></li>
+                <li><a href="/order">Tilaa tästä</a></li>
+                <li><a href="/comments">Tarkastele arvosteluja</a></li>
+            </ul>
+        </nav>
+        <hr>
+</html>
+{% block content %}
+{% endblock %}

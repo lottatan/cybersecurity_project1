@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends "profile.html" %}
+{% block content %}
+
+<html>
+    <head>
+        <title>{% block title %}Rekisteröidy{% endblock %}</title>
+        <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='main.css') }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div class="content">
+            <form action="/create" method="POST">
+            Tunnus: <br><input type="text" name="username" minlength="1">
+            <p>
+            Salasana: <br><input type="password" name="password" minlength="1">
+            </p>
+            <input id= "create-button" type="submit" value="Luo käyttäjä">
+            </form>
+        </div>
+        {% endblock %}
