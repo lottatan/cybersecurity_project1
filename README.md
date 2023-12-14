@@ -1,60 +1,52 @@
-# PIZZA PALVELU
+# PIZZA SERVICE
 
-Ideana olisi luoda online-pizzapalvelu, josta voi tilata pizzaa ja juomia.
- 
-Kun on luonut käyttäjän, on mahdollista tarkastella omia vanhoja tilauksia, nähdä kuinka paljon on käyttänyt yhteensä rahaa pizzapalveluun,
-suosituimman pizzansa sekä suosituimman juomansa, ja jättää arvosteluja ja kommentteja.
+The idea is to create an online pizza service where users can order pizza and drinks.
 
-Pizzapalvelun nettisivulta voi tilataamisen lisäksi nähdä annettuja arvosteluja, sekä kuinka monta tähteä palvelu on keskimäärin saanut.
-Sivulla näkee myös, mikä on ollut suosituin pizza ja juoma.
+Once a user has created an account, they can view their past orders, see how much money they've spent in total on the pizza service, view their most ordered pizza and drink, and leave reviews and comments.
 
-Tilauksessa voi valita 0-5 kappaletta jokaista pizzaa ja juomaa. Tilaajan täytyy hänen ilmoittaa myös toimitusosoite ja antaa tarkat saapumisohjeet.
+On the pizza service website, in addition to placing orders, users can also see given reviews and the average star rating the service has received. The page also displays the most popular pizza and drink.
+
+During an order, users can select 0-5 units of each pizza and drink. The customer must provide their delivery address and detailed arrival instructions.
 
 
-## Sovelluksen toiminnot
+## Application functions
 
-- Käyttäjä voi rekisteröidä uuden käyttäjätilin tai kirjautua sisään
+- Users can register a new account or log in
+- If a user is logged in, they can leave comments or reviews
+- Anyone can view reviews and comments
+- Users can view their order history and favorite products
+- It's possible to see PizzaService's most popular pizza and drink
 
-- Jos käyttäjä on kirjautunut sisään, pystyy hän jättämään kommentteja tai arvosteluja
+## Application Startup instructions
 
-- Kuka tahansa pystyy tarkastelemaan arvosteluja ja kommentteja
+1. Clone the repository and navigate to its root using the command "cd pizzaservice"
 
-- Käyttäjä pystyy tarkastelemaan omaa tilaushistoriaansa ja suosikkituotteitaan
+2. Create a new file named ".env" in the root directory and add the following information:
 
-- On mahdollista nähdä myös PizzaServicen suosituin pizza ja juoma
+    DATABASE_URL= local-database-url
+    SECRET_KEY= secret-key
 
-
-## Sovelluksen käynnistysohjeet
-
-1. Kloonaa repositorio ja siirry sen juureen komennolla " cd pizzaservice"
-
-2. Luo uusi ".env" -niminen tiedosto hakemiston juureen ja lisää sinne seuraavat tiedot:
-
-    - DATABASE_URL= tietokannan-paikallinen-osoite
-    - SECRET_KEY= salainen-avain
-
-
-3. Aktivoi virtuaaliympäristö ja asenna sovellukseen riippuvuudet:
+3. Activate the virtual environment and install the application's dependencies:
 
         $ python3 -m venv venv
         $ source venv/bin/activate
 
-4. Lisää myös requirements tiedosto:
+4. Add the requirements file:
         
         venv $ pip install -r ./requirements.txt
 
-4. Jos et ole vielä asentanut psql toimintoja koneellesi, tee se näiden ohjeiden mukaisesti:
+5. If you haven't installed PostgreSQL functions on your computer yet, follow these instructions:
 
 [Ohjeet](https://github.com/hy-tsoha/local-pg)
 
-5. Kun olet käynnistänyt tietokannan toisessa terminaali-ikkunassa komennolla:
+6. Once you've started the database in another terminal window using the command:
 
         $ start-pg.sh
 
-6. Voit määrittää tietokannan PizzaService repositorion juuressa komennolla:
+7. You can configure the database for the PizzaService repository using the command at the root of the repository:
 
         venv $ psql < schema.sql
 
-5. Käynnistä sovellus komennolla
+8. Start the application with command:
 
         venv $ flask run
