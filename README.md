@@ -35,9 +35,7 @@ During an order, users can select 0-5 units of each pizza and drink. The custome
         
         venv $ pip install -r ./requirements.txt
 
-5. If you haven't installed PostgreSQL functions on your computer yet, follow these instructions:
-
-[Instructions](https://github.com/hy-tsoha/local-pg)
+5. If you haven't installed PostgreSQL functions on your computer yet, do it now. The process might be different for different computers, but there are good instructions online.
 
 6. Once you've started the database in another terminal window using the command:
 

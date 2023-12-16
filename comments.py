@@ -12,6 +12,11 @@ def get_list():
 
 def add_comment(comment):
     username = users.username()
+    '''Flaw 1'''
+    '''Flaw 1 fix:
+        if not username:
+            abort(401)
+    '''
     sql = text("INSERT INTO comments (username, comment, posted) VALUES (:username, :comment, NOW())")
     db.session.execute(sql, {"username":username, "comment":comment, "posted":datetime.datetime.now()})
     db.session.commit()

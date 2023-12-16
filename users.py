@@ -43,6 +43,9 @@ def user_id():
 def username():
     return session.get("username")
 
+'''Flaw 1 fix
+    return session.get("username", None)'''
+
 def check_csrf():
     if session["csrf_token"] != request.form["csrf_token"]:
         abort(403)
